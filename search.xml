@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>装宽带注意点，附公网IP申请</title>
+    <url>/archives/e207e33f.html</url>
+    <content><![CDATA[<p>如何申请公网IP，以及自己装宽带时的注意点，一开始就一步到位。</p>
+<a id="more"></a>
+
+<h3 id="光猫"><a href="#光猫" class="headerlink" title="光猫"></a>光猫</h3><p>1、光猫尽量选华为（814V5-全千兆网口光猫），当然后期也可以怼客服，要求更换光猫（理由：带宽跑不满）。</p>
+<p>2、安装时要求师傅，光改桥接，不要路由模式，后期也可客服修改。</p>
+<p>3、询问安装师傅，光猫的超级管理员账号密码（为后续”多播”做准备）。</p>
+<p>多播：光猫所有网口均可达到带宽速度，甚至可叠加，通常是所有网口分带宽的。</p>
+<h3 id="路由（百兆）"><a href="#路由（百兆）" class="headerlink" title="路由（百兆）"></a>路由（百兆）</h3><p>1、选一款稍微好点的路由做主路由，品牌看个人能承受的价格，一般电信都会送WiFi6千兆路由器（不咋的）。</p>
+<p>2、旁路由（百元款：推荐小米/红米AC2100），性价比高，可玩性也高，可刷固件，如果你的主路由都没它好，亦可作主路由。</p>
+<h3 id="公网条件"><a href="#公网条件" class="headerlink" title="公网条件"></a>公网条件</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> <p>公网IP</p>
+<p>移动无，联通看心情，电信（基本申请都会有，理由：家里需要安装摄像头，厂商需要公网IP连接；家庭云存储）</p>
+</li>
+<li><input checked="" disabled="" type="checkbox"> <p>光改桥接</p>
+</li>
+</ul>
+<p>检查自己是否是公网：登录路由器后台查看Wlan的IP，对比百度IP得到的地址，如果一致，即为公网。</p>
+<p>PS：由于目前IP地址池紧张，没有纯粹的公网IP给你，实为动态公网IP，一月一跳，即光猫自动重启。</p>
+]]></content>
+      <categories>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>经验吧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>画上句号</title>
+    <url>/archives/5f1282fc.html</url>
+    <content><![CDATA[<blockquote class="blockquote-center">
+            <p>他一生极苦，却最喜糖。</p>
+
+          </blockquote>
+
+<a id="more"></a>
+
+<p>不知道写点什么，也不知道自己为什么而写</p>
+<p>毕业后，发生了很多事</p>
+<p>甚至有一些变故，让我喘不过气</p>
+<p>或许，命运不该如此</p>
+<p>生活总是向着好的方向去发展</p>
+<p>以前总以为，我在为我的人生赎罪</p>
+<p>其实不然，那些经历让我久久不能释怀</p>
+<p>一年两年，还是一辈子</p>
+<p>岁月易逝，伤疤难忘</p>
+<p>如果说为我的青春收个尾</p>
+<p>今天就画上一个句号吧</p>
+]]></content>
+      <categories>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FTP与文件共享</title>
+    <url>/archives/b3ad6b9f.html</url>
+    <content><![CDATA[<p>同一局域网下，计算机组共享有两种方式：FTP和文件共享，虽然最终目的相同，但工作模式却不一样，有着本质区别。</p>
+<a id="more"></a>
+
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ul>
+<li><p>FTP是实现上传和下载功能的，是实现的一种服务，包括对用户系统的管理，安全性，管理性，功能上都有很大的不同。另外所用协议也不一样，本地共享用UNC路径(通用命名协议)访问，而FTP则是用FTP协议，广域网上更为广泛的使用。</p>
+</li>
+<li><p>FTP必须将文件上传或者下载才可以从各端直接读取文件内部的具体内容，文件共享只要权限通过即可直接读取、修改文件内部的详细内容，前者无法直接读取、修改，后者却是可以的。</p>
+</li>
+</ul>
+<h3 id="操作难度"><a href="#操作难度" class="headerlink" title="操作难度"></a>操作难度</h3><p>相对来说，文件共享更加容易操作，FTP需要建立站点，前期操作步骤多一些。</p>
+<h3 id="优劣势"><a href="#优劣势" class="headerlink" title="优劣势"></a>优劣势</h3><ul>
+<li>FTP相比共享更加高端，且支持多用户，断点传送。</li>
+</ul>
+<ul>
+<li>共享是对内网的一个用户间资源的共享，功能很单一，没有安全保障，如果不是服务器，本机电脑则只能10人同时可用，也不支持断点传送。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>随手记</category>
+      </categories>
+      <tags>
+        <tag>PC</tag>
+        <tag>FTP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>黑苹果折腾日记（一）</title>
+    <url>/archives/a49c84ce.html</url>
+    <content><![CDATA[<p>解决黑苹果与 Win 双系统时，在进入 MacOS 之后，再次返回 Windows 导致系统时间错误。</p>
+<a id="more"></a>
+
+<p>在 Windows 下，管理员运行终端并执行</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>经验吧</category>
+      </categories>
+      <tags>
+        <tag>黑苹果</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电影分享</title>
+    <url>/archives/37171ce.html</url>
+    <content><![CDATA[<blockquote>
+<p>如题，目前有《误杀》、《利刃出鞘》。</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="误杀"><a href="#误杀" class="headerlink" title="误杀"></a>误杀</h3><video src='http://cloud.189.cn/shareFileDownload.action?param=B77A1F5014684F11BE09E2CB5D4D83A603216D738FB437EA7999C4300838B2651F18A2BBD3D063933FBAB9AE9B644C06C77814B9D6EA5256D033ACF5A1F02EF5' type='video/mp4' controls='controls'  width='100%' height='100%'>
+</video>
+
+
+
+<h3 id="利刃出鞘"><a href="#利刃出鞘" class="headerlink" title="利刃出鞘"></a>利刃出鞘</h3><video src='https://cloud.189.cn/shareFileDownload.action?param=9A6E19656943A2B4A0474D8A9057E1FF3615EC4FA3EAFB814033FB3EE04968A794492D3DF6697ECC55362B6F4E85B5306907F89AA931D1B16AE73A29492049D4' type='video/mp4' controls='controls'  width='100%' height='100%'>
+
+
+
+<h3 id="鹿鼎记-1992"><a href="#鹿鼎记-1992" class="headerlink" title="鹿鼎记 1992"></a>鹿鼎记 1992</h3><video src='https://data-hz-pds.teambition.net/5fd258c024afe451b46f42519b1887bba1b96ba6%2F5fd258c0ff432b4fdafa4522a82816e2220040d7?response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27%25E9%25B9%25BF%25E9%25BC%258E%25E8%25A8%25982.Royal.Tramp.2.1992.1080p.BluRay.x264-7bt.mp4&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-expires=1608047533&x-oss-signature=Yv4sXrdUpPZd5Me5qfXJo1yRAxFxirL34Rid5YR56Ak%3D&x-oss-signature-version=OSS2' type='video/mp4' controls='controls'  width='100%' height='100%'>
+</video>
+]]></content>
+      <categories>
+        <category>随手记</category>
+      </categories>
+      <tags>
+        <tag>电影</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>临时邮箱搭建</title>
+    <url>/archives/971401ca.html</url>
+    <content><![CDATA[<h3 id="什么是临时邮箱？"><a href="#什么是临时邮箱？" class="headerlink" title="什么是临时邮箱？"></a>什么是临时邮箱？</h3><p>临时邮箱, 是指能接收邮件的临时邮箱，也称为一次性邮箱，24小时邮箱，10分钟邮箱，可丢弃邮箱，是完全匿名和安全的。</p>
+<a id="more"></a>
+
+<h3 id="为什么要用临时邮箱？"><a href="#为什么要用临时邮箱？" class="headerlink" title="为什么要用临时邮箱？"></a>为什么要用临时邮箱？</h3><p>经常上网需要注册一些网站(仅需要邮箱验证)，但是对于一些不知名的网站安全性没有保证，注册时用真实邮箱可能会发生以下安全问题：</p>
+<ol>
+<li><strong>个人密码泄露</strong>，被收集分发乱用，特别是我们一个密码用在多个账号的朋友。</li>
+<li><strong>个人信息泄露。</strong></li>
+<li><strong>遭受垃圾邮件攻击。</strong></li>
+</ol>
+<span class="label success">这时选用临时邮箱的好处：</span>无需登记、无需注册、不留任何个人真实信息、用完即走。和信息安全做朋友，即刻开始。
+
+<h3 id="开始工作"><a href="#开始工作" class="headerlink" title="开始工作"></a>开始工作</h3><ol>
+<li>安装宝塔面板，<a href="https://www.bt.cn/" target="_blank" rel="noopener external nofollow noreferrer">可参考官方</a>。</li>
+<li>需要放行 3000 端口和 25 端口。</li>
+</ol>
+<p><img data-src="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/18.png" alt=""></p>
+<ol start="3">
+<li>然后宝塔软件商城里面安装 pm2，它自带 node、npm、nvm。</li>
+</ol>
+<p><img data-src="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/19.png" alt=""></p>
+<ol start="4">
+<li>环境没问题的话全部复制一次执行</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/malaohu/forsaken-mail.git</span></span><br><span class="line">cd forsaken-mail</span><br><span class="line">npm install</span><br><span class="line">pm2 start bin/www --name=“forsaken-mail“</span><br><span class="line">pm2 startup</span><br><span class="line">pm2 save</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>然后访问<span class="label info"> ip:3000</span></li>
+</ol>
+<h3 id="如果进不去"><a href="#如果进不去" class="headerlink" title="如果进不去"></a>如果进不去</h3><p>25端口一般会系统被占用，解除占用，禁用postfix。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chkconfig --level 2345 postfix off</span><br></pre></td></tr></table></figure>
+
+<p>然后停止postfix</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl stop postfix</span><br></pre></td></tr></table></figure>
+
+<p>再执行一次</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pm2 start bin&#x2F;www --name&#x3D;“forsaken-mail“</span><br></pre></td></tr></table></figure>
+
+<h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h3><p>域名添加 a 记录和 mx 记录即可生效。</p>
+<h3 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h3><p><img data-src="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/17.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>教程贴</category>
+      </categories>
+      <tags>
+        <tag>Mail</tag>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>远程连接服务器</title>
+    <url>/archives/b49c4352.html</url>
+    <content><![CDATA[<p>如何连接远程服务器，对于 Windows 平台来说，个人推荐 Xshell 和 FinalShell，这两款软件还是非常不错的，免费的同时，纯净无广告，这不就是我们想要的嘛！</p>
+<a id="more"></a>
+
+<h3 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h3><p>两款软件均免费，可在官网直接获取，不需要再去找破解或是绿色版，其中 Xshell 个人/教育版是免费的，对于日常使用来说，已经足够。</p>
+<ul>
+<li><p><a href="https://www.netsarang.com/zh/free-for-home-school/" target="_blank" rel="noopener external nofollow noreferrer">Xshell</a></p>
+</li>
+<li><p><a href="http://www.hostbuf.com/t/988.html" target="_blank" rel="noopener external nofollow noreferrer">FinalShell</a></p>
+</li>
+</ul>
+<h3 id="功能预览"><a href="#功能预览" class="headerlink" title="功能预览"></a>功能预览</h3><h4 id="Xshell"><a href="#Xshell" class="headerlink" title="Xshell"></a>Xshell</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">支持SSH1, SSH2, SFTP, TELNET, RLOGIN和串行协议</span><br><span class="line">支持Windows Vista&#x2F;7&#x2F;8&#x2F;10，服务器2008&#x2F;2012&#x2F;2016</span><br><span class="line">支持OpenSSH和ssh.com服务器</span><br><span class="line">支持在一个窗口中有多个选项卡</span><br><span class="line">支持在一个窗口中显示多个选项卡组</span><br><span class="line">多用户设置</span><br><span class="line">保持活跃功能</span><br><span class="line">SOCKS4&#x2F;5, HTTP代理连接</span><br><span class="line">自定义键映射</span><br><span class="line">VB, Jscript, Python脚本</span><br><span class="line">IPv6 支持</span><br><span class="line">Kerberos(MIT Keberos, Microsoft SSPI)身份验证支持</span><br><span class="line">SSH &#x2F; Telnet追踪</span><br></pre></td></tr></table></figure>
+
+<h4 id="FinalShell"><a href="#FinalShell" class="headerlink" title="FinalShell"></a>FinalShell</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">多平台支持Windows、Mac、Linux</span><br><span class="line">多标签,批量服务器管理</span><br><span class="line">支持登录ssh和Windows远程桌面</span><br><span class="line">漂亮的平滑字体显示,内置100多个配色方案</span><br><span class="line">shell、sftp同屏显示,同步切换目录</span><br><span class="line">命令自动提示,智能匹配,输入更快捷,方便</span><br><span class="line">sftp支持,通过各种优化技术,加载更快,切换,打开目录无需等待</span><br><span class="line">服务器网络,性能实时监控,无需安装服务器插件</span><br><span class="line">内置海外服务器加速,加速远程桌面和ssh连接,操作流畅无卡顿</span><br><span class="line">双边加速功能,大幅度提高访问服务器速度</span><br><span class="line">内存,Cpu性能监控,Ping延迟丢包,Trace路由监控</span><br><span class="line">实时硬盘监控</span><br><span class="line">进程管理器</span><br><span class="line">快捷命令面板,可同时显示数十个命令</span><br><span class="line">内置文本编辑器,支持语法高亮,代码折叠,搜索,替换</span><br><span class="line">ssh和远程桌面均支持代理服务器</span><br><span class="line">打包传输,自动压缩解压</span><br><span class="line">免费内网穿透,无需设置路由器,无需公网ip</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li>Xshell 需要填写邮箱，后续下载链接会通过邮件形式发送</li>
+</ul>
+<p><img data-src="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/13.png" alt=""></p>
+<ul>
+<li>FinalShell 直接下载安装即可使用</li>
+</ul>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>个人还是更推荐 FinalShell，Xshell 在连接外网服务器时，超时断连现象还是挺严重的，而 FinalShell 可以利用中继完美解决这一问题，何况颜值上也差不多。</p>
+]]></content>
+      <categories>
+        <category>经验吧</category>
+      </categories>
+      <tags>
+        <tag>SSH</tag>
+        <tag>远程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信适配深色模式</title>
+    <url>/archives/9d115067.html</url>
+    <content><![CDATA[<p>喜大普奔，今日微信终于迎来了深色模式的适配，除了常规模块，另外公众号、页面文章，以及其他的一些设置，都完美加入了暗黑行列。</p>
+<a id="more"></a>
+
+<p><img data-src="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/11.jpg" alt=""></p>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><ul>
+<li>Appstore 商店获取更新</li>
+<li>收不到更新推送<ol>
+<li>重启手机，再次进入商店下拉刷新</li>
+<li>切换美区 Apple ID，查看是否更新</li>
+<li>点击 <a href="https://itunes.apple.com/cn/app/id414478124" target="_blank" rel="noopener external nofollow noreferrer">链接</a> 跳转查看是否更新</li>
+<li>如果还是收不到更新的话，那只能再等等，推送延迟的问题</li>
+</ol>
+</li>
+</ul>
+<h3 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h3><p><img data-src="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/05.jpg" alt=""></p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>硬性条件：微信最新版 v7.0.12、iOS 13，缺一不可。</p>
+<p>可在控制中心或者系统设置中，开启深色模式，微信自然也会跟随系统变化。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/08.jpg" alt=""></p>
+<h3 id="其他变化"><a href="#其他变化" class="headerlink" title="其他变化"></a>其他变化</h3><ol>
+<li>语音界面大改版，重新设计了 UI，使用起来更加地顺滑，但实际貌似并没有什么用。</li>
+</ol>
+<p><img data-src="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/07.jpg" alt=""></p>
+<ol start="2">
+<li>在最新版微信群聊里，打开底部菜单按钮，可以看到多了一个<strong>「群工具」</strong>，利用此功能可以置顶群聊过程中群员所使用的小程序。</li>
+</ol>
+<p><img data-src="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/06.png" alt=""></p>
+<h3 id="看法"><a href="#看法" class="headerlink" title="看法"></a>看法</h3><p>虽然已经适配深色模式，不过并不是完美，白天使用可能真的不太适合（也因人而异），相比之下，同为通讯软件的 Telegram 就做的非常好。</p>
+<p>无论是视觉上，还是使用上，交互设计，功能模块，真的非常棒！</p>
+]]></content>
+      <categories>
+        <category>随手记</category>
+      </categories>
+      <tags>
+        <tag>微信</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>替换思源宋体</title>
+    <url>/archives/5293d576.html</url>
+    <content><![CDATA[<p>Google Fonts 提供了思源黑体和思源宋体的简繁支持，而且高达 6 种字重支持，其中思源宋体更是高达 7 种字重。对于中文书籍，宋体一直是正文印刷的标准字体，而不是目前电子显示屏上普遍的黑体，因为宋体的衬线更适合长时间阅读。</p>
+<a id="more"></a>
+
+<blockquote>
+<p>基于 Hexo 博客的 Next 主题修改，其他主题暂不可知。</p>
+</blockquote>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ol>
+<li><p>修改主题配置文件，找到 <strong>font</strong> 模块。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"># 文件位置：Blog/themes/next/_config.yml</span><br><span class="line"></span><br><span class="line">font:</span><br><span class="line">+  enable: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  # Uri of fonts host, e.g. https:<span class="comment">//fonts.googleapis.com (Default).</span></span><br><span class="line">+  host: https:<span class="comment">//fonts.loli.net</span></span><br><span class="line"></span><br><span class="line">  # Global font settings used <span class="keyword">for</span> all elements inside &lt;body&gt;.</span><br><span class="line">  global:</span><br><span class="line">    external: <span class="literal">true</span></span><br><span class="line">+    family: Noto Serif SC</span><br><span class="line">    <span class="built_in">size</span>:</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改主题的 base.styl 文件，将原本的 chinese 换成 base 就行。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"># 文件位置：Blog/themes/next/source/css/_variables/base.styl</span><br><span class="line"></span><br><span class="line">- $font-family-monospace = consolas, Menlo, monospace, $font-family-chinese;</span><br><span class="line">- $font-family-monospace = get_font_family('codes'), consolas, Menlo, monospace, $font-family-chinese if get_font_family('codes');</span><br><span class="line"></span><br><span class="line">+ $font-family-monospace = consolas, Menlo, monospace, $font-family-base;</span><br><span class="line">+ $font-family-monospace = get_font_family('codes'), consolas, Menlo, monospace, $font-family-base if get_font_family('codes');</span><br></pre></td></tr></table></figure></li>
+<li><p>部署，完成！</p>
+</li>
+</ol>
+<h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><p>长文章为主、文字内容为主的博客，强烈建议马上使用 Google Fonts 提供的思源宋体！</p>
+]]></content>
+      <categories>
+        <category>教程贴</category>
+      </categories>
+      <tags>
+        <tag>字体</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>资源分享</title>
+    <url>/archives/eb44505a.html</url>
+    <content><![CDATA[<p>整理一些常用安装包，以方便后续查找使用，欢迎留言提需求，马上补上~</p>
+<a id="more"></a>
+
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><ul>
+<li><p>远程控制首选工具</p>
+<p><a href="https://www.lanzous.com/iah2xhe" target="_blank" rel="noopener external nofollow noreferrer">TeamViewer 15.3 俄罗斯大神绿色版</a></p>
+<p><a href="https://www.lanzous.com/iah2xyb" target="_blank" rel="noopener external nofollow noreferrer">被控端单文件版</a></p>
+</li>
+<li><p>电脑引导更改</p>
+<p><a href="https://www.lanzous.com/iah2xre" target="_blank" rel="noopener external nofollow noreferrer">EasyUEFI 企业版</a></p>
+</li>
+<li><p>全球即时通讯</p>
+<p><a href="https://www.lanzous.com/i9dv4he" target="_blank" rel="noopener external nofollow noreferrer">Telegram 1.9.13</a></p>
+</li>
+<li><p>老牌解压缩工具</p>
+<p><a href="https://pan.lanzou.com/b193273/" target="_blank" rel="noopener external nofollow noreferrer">Winrar</a></p>
+</li>
+</ul>
+<h3 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h3>]]></content>
+      <categories>
+        <category>随手记</category>
+      </categories>
+      <tags>
+        <tag>资源</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Onedrive 5T 账号放送</title>
+    <url>/archives/655a47f9.html</url>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">请输入密码</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="84cd46df0e8738f81f02c9da334db305304e924d3172cb1119aa2fdccfbac391">c1abde5d1633980a5663b6892c9c49fab4e9536ef17fa84d1c37223f8cc057b84dc604f0d56356e99ae03ed5d9ddb5503a60da5a45e62f07bfc808dbd9fc95ad</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>随手记</category>
+      </categories>
+      <tags>
+        <tag>onedrive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo + Github Action</title>
+    <url>/archives/faefabad.html</url>
+    <content><![CDATA[<p>从刚开始接触互联网，到现在慢慢有点了解，差不多已有四年了，在这个过程中，遇到过很多问题，也有很多疑惑，不过在漫长的摸索路途中，也学会了成长。</p>
+<p>要说写作，可供选择的平台太多了，微信公众号、知乎、简书、博客园……之所以没有选择它们，主要还是因为平台限制太多，虽然个人自建博客，需要一点动手能力，且对 SEO 不是那么友好，不过能在网络上留下属于自己的一点印记，还是不错的。</p>
+<a id="more"></a>
+
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>从一开始的 <a href="https://hexo.io/" target="_blank" rel="noopener external nofollow noreferrer">Hexo</a> 到之后 <a href="http://typecho.org/" target="_blank" rel="noopener external nofollow noreferrer">Typecho</a>，虽然说 Typecho 的主题非常多又好看，但是终究需要依靠服务器来进行，动态博客虽然炫酷，管理和迁移资源多多少少有些不便，所以最后还是选择了静态博客 <a href="https://hexo.io/" target="_blank" rel="noopener external nofollow noreferrer">Hexo</a>，只不过做了些许改变，更加好用，也方便管理。</p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>本次博客采用 <a href="https://hexo.io/" target="_blank" rel="noopener external nofollow noreferrer">Hexo</a> + <a href="https://github.com/" target="_blank" rel="noopener external nofollow noreferrer">Github</a> + <a href="https://github.com/actions" target="_blank" rel="noopener external nofollow noreferrer">Github action</a> 来进行自动化部署，不再依靠原生 Hexo 的三步命令，只要将文章（md文件）上传到 <a href="https://github.com/" target="_blank" rel="noopener external nofollow noreferrer">Github</a>，接着一切都将会自动化部署，并生成相应的网页。</p>
+<h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>今天的主题是如何利用 Github action 来进行自动化部署 Hexo 博客，教程还是比较详细的。</p>
+<blockquote>
+<p>持续集成由很多操作组成，比如抓取代码、运行测试、登录远程服务器，发布到第三方服务等等，而 GitHub 把这些操作就称为 actions。</p>
+</blockquote>
+<ol>
+<li><p>对于如何部署 Hexo 这里就不多介绍了，某度上教程还是很多的。</p>
+</li>
+<li><p>准备仓库</p>
+<p>私有仓库：用作存放本地的 Hexo 源码，之后就可以直接丢文件至私有库，即可完成博客的自动化部署。</p>
+<p>公有仓库：构建并生成 Hexo 网页，存放静态页面的，也就是你当前的博客。</p>
+</li>
+<li><p>创建密钥</p>
+<p>为了方便运行 GitHub Actions 时登录 GitHub 账号，我们使用 SSH 方式登录，就是要把设备的私钥交给 GitHub Actions，公钥交给 GitHub，需要我们去 Settings 里去配置。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "Github 的邮箱地址"  //第一次生成密钥</span><br><span class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa_x -C "Github 的邮箱地址"  //非第一次生成密钥</span><br></pre></td></tr></table></figure>
+
+<p>以 Windows 为例：密钥在<code>C:\Users\用户名</code>里，其中Users可能因为系统原因显示的是<code>用户</code>，这个文件夹里会有一个<code>.ssh</code>的目录，这个里面就是我们的密钥对。</p>
+<p><strong>公钥：id_rsa.pub</strong></p>
+<p>把<code>id_rsa.pub</code>这个文件用文本文档打开，将内容复制到 Github，配置路径：Github网站 – Settings – SSH and GPG keys</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/69by3D.png" alt=""></p>
+<p><strong>私钥：id_rsa</strong></p>
+<p>找到刚刚新建的私有仓库，配置路劲：私有仓库的 Settings - Secrets 里，新建一个<code>HEXO_DEPLOY_PRIVATE_KEY</code>的密钥，将本地文本复制进去。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/PlIeLr.png" alt=""></p>
+</li>
+<li><p>添加 Actions</p>
+<p>点击私有仓库里的<code>Actions</code></p>
+<p>点击<code>New workflow</code>来创建一个新的 actions</p>
+<p>然后在内容框填入以下代码</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> workflow name</span></span><br><span class="line">name: Hexo Blog CI</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> master branch on push, auto run</span></span><br><span class="line">on: </span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - master</span><br><span class="line">      </span><br><span class="line">jobs:</span><br><span class="line">  build: </span><br><span class="line">    runs-on: ubuntu-latest </span><br><span class="line">        </span><br><span class="line">    steps:</span><br><span class="line">    # check it to your workflow can access it</span><br><span class="line">    # from: https://github.com/actions/checkout</span><br><span class="line">    - name: Checkout Repository master branch</span><br><span class="line">      uses: actions/checkout@master </span><br><span class="line">      </span><br><span class="line">    # from: https://github.com/actions/setup-node  </span><br><span class="line">    - name: Setup Node.js 10.x </span><br><span class="line">      uses: actions/setup-node@master</span><br><span class="line">      with:</span><br><span class="line">        node-version: "10.x"</span><br><span class="line">    </span><br><span class="line">    - name: Setup Hexo Dependencies</span><br><span class="line">      run: |</span><br><span class="line">        npm install hexo-cli -g</span><br><span class="line">        npm install</span><br><span class="line">    </span><br><span class="line">    - name: Setup Deploy Private Key</span><br><span class="line">      env:</span><br><span class="line">        HEXO_DEPLOY_PRIVATE_KEY: $&#123;&#123; secrets.HEXO_DEPLOY_PRIVATE_KEY &#125;&#125;</span><br><span class="line">      run: |</span><br><span class="line">        mkdir -p ~/.ssh/</span><br><span class="line">        echo "$HEXO_DEPLOY_PRIVATE_KEY" &gt; ~/.ssh/id_rsa </span><br><span class="line">        chmod 600 ~/.ssh/id_rsa</span><br><span class="line">        ssh-keyscan github.com &gt;&gt; ~/.ssh/known_hosts</span><br><span class="line">        </span><br><span class="line">    - name: Setup Git Infomation</span><br><span class="line">      run: | </span><br><span class="line">        git config --global user.name '名字' </span><br><span class="line">        git config --global user.email '邮件'</span><br><span class="line">    - name: Deploy Hexo </span><br><span class="line">      run: |</span><br><span class="line">        hexo clean</span><br><span class="line">        hexo generate </span><br><span class="line">        hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>最后点击提交即可，这样设置后就不需要用 Hexo 三命令进行部署了，直接将代码推送到私有仓库，一分钟后即可看到效果。</p>
+</li>
+</ol>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>很喜欢这种自动化部署，省事方便，最关键的是，可以多平台，不用配置任何环境，即可创作，代码又交付给 Github 管理，不用担心会遗失。</p>
+]]></content>
+      <categories>
+        <category>教程贴</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Github Action</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>再看《忽而今夏》</title>
+    <url>/archives/5c5e9aae.html</url>
+    <content><![CDATA[<blockquote>
+<p>来不及遗忘，来不及细数，眉毛那么短，思念这么长。</p>
+</blockquote>
+<a id="more"></a>
+
+<p>又回顾了一遍《忽而今夏》，章远和何洛的情感，总是那么的动容，冯萧确实很优秀，但是爱情里的先来后到就是这么的骨感，开放式的结局，点缀地刚刚好。</p>
+<p><a href="https://movie.douban.com/subject/27041389/" rel="external nofollow noreferrer" target="_blank"><img data-src="https://i.loli.net/2020/03/15/hCldq3KBQZ1kmju.png" ></a></p>
+<p>这个年纪的我们有时候有些任性，把握不好程度。太过深爱会丢失自己，不够又会使彼此产生误会，可能是太过在乎，也可能是不太自信。</p>
+<p>谁又能一直保持第一次相见的那个样子，这个世界唯一不变的事情就是一直都在变啊，虽然我们不能保持初见的模样，可是我们会一直保持初心。</p>
+]]></content>
+      <categories>
+        <category>碎碎念</category>
+      </categories>
+      <tags>
+        <tag>过往</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网购技巧</title>
+    <url>/archives/928d4fb3.html</url>
+    <content><![CDATA[<blockquote>
+<p>一些网购技巧，也不是什么秘密，我只想做个平平无奇的省钱小天才！</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="淘宝"><a href="#淘宝" class="headerlink" title="淘宝"></a>淘宝</h3><ul>
+<li><p>淘宝联盟</p>
+<ul>
+<li>规则：可返利，可提现（次月出账单），高佣金需要推广</li>
+<li>使用方法：淘宝账号登入，复制商品的淘口令，打开软件即可自动提示</li>
+</ul>
+</li>
+<li><p>一淘</p>
+<ul>
+<li>规则：可返利，不可提现，返利（集分宝）可用于淘宝网购支付时抵扣，也可以用作打车、还信用卡、水电费等费用抵扣</li>
+<li>使用方法：淘宝账号登入，将商品加入淘宝购物车，一淘里的购物车会自动同步数据</li>
+</ul>
+</li>
+</ul>
+<h3 id="京东"><a href="#京东" class="headerlink" title="京东"></a>京东</h3><ul>
+<li>京粉<ul>
+<li>规则：可返利，可提现（次月出账单），高佣金需要推广</li>
+<li>使用方法：京东账号登入，复制商品的链接，打开软件即可自动提示</li>
+</ul>
+</li>
+<li>京喜<ul>
+<li>规则：可返利，可提现（满10元），也可以用作京喜里面购物抵扣</li>
+<li>使用方法：京东账号登入，将商品加入京东购物车，京喜里的购物车会自动同步数据</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>经验吧</category>
+      </categories>
+      <tags>
+        <tag>网购</tag>
+        <tag>电商</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>科学上网</title>
+    <url>/archives/812d49a5.html</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近博主许多同学询问起了关于电脑科学上网的问题，接踵而至，为此博主写下此篇教程(对于老司机来说，本篇可略过，针对小白)，虽然现在 V2Ray 吃香，但是体验之后，依旧喜欢 SSTAP</p>
+<a id="more"></a>
+
+<h3 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h3><p>所谓科学上网，这里不多做解释，通过它，我们可以上 Google、YouTube、Twitter、instagram等国外网站</p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>关于此类工具其实有很多，不过博主使用下来，推荐今天这款SSTap，支持ss/ssr/sock5常见代理以及ssr订阅</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li><p><strong>下载：</strong>已为大家准备好安装包，下载即可 <a href="https://onedrive.pp.ua/?/Software/PC/SSTap/SSTap-beta-setup-1.0.9.7.exe" target="_blank" rel="noopener external nofollow noreferrer">地址</a></p>
+</li>
+<li><p><strong>安装：</strong>下载好之后，可以看到以.exe为结尾的安装包，点击运行，一路回车安装即可，安装完毕之后，打开刚刚安装选择的路径，删除update目录，以防止后续提示更新</p>
+</li>
+<li><p><strong>添加：</strong>代理旁边附有</p>
+<ol>
+<li><p>㊉ 即添加代理，这里提供三种方式添加，一般别人给出的是链接，我们选择第三种方式，直接粘贴节点链接添加即可</p>
+</li>
+<li><p>㊀ 即删除当前代理</p>
+</li>
+<li><p>ϟ 测试当前代理延迟</p>
+</li>
+</ol>
+</li>
+<li><p><strong>模式：</strong>提供6种模式可供选择，可根据自己需求来定位，值得说明的是</p>
+<ol>
+<li><p>全局是指整个网络ip都走服务器，也就是无论上什么网，都是以国外的网络来访问，唯一缺点就是访问国内站点时速度会被限制</p>
+</li>
+<li><p>跳过中国站点，当你访问国内站点时，使用的是你本地宽带网络，而访问国外网站时才走服务器</p>
+</li>
+</ol>
+</li>
+<li><p><strong>连接：</strong>代理和模式均选择好之后，连接</p>
+</li>
+<li><p><strong>订阅：</strong>右键桌面右下角SSTap图标，选择ssr订阅-ssr订阅管理，添加url即可</p>
+</li>
+</ul>
+<h3 id="小记"><a href="#小记" class="headerlink" title="小记"></a>小记</h3><p>本篇教程到此也就结束了，关于节点，需要大家自行寻找，博主提供一个<a href="https://lpssxs.com/" target="_blank" rel="noopener external nofollow noreferrer">机场地址</a>，目前已关闭注册，联系博主可进行内部注册与购买</p>
+]]></content>
+      <categories>
+        <category>教程贴</category>
+      </categories>
+      <tags>
+        <tag>科学上网</tag>
+        <tag>代理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>原生 TG 解锁，拒绝使用第三方</title>
+    <url>/archives/66abc1d4.html</url>
+    <content><![CDATA[<p>Telegram 作为一款全球即时通讯软件，不仅仅拥有上万人的群组，还可以自建频道，发布属于自己的消息板块，订阅、推送、阅读、评论……重要的是免费！</p>
+<a id="more"></a>
+
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p><img data-src="https://i.loli.net/2020/03/15/ZmXJwzLgvyKfndP.png" alt="官方说明"></p>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
+<li><p>原生 TG （版本 ≥ 5.1.3  iOS 商店：<a href="https://apps.apple.com/cn/app/telegram-messenger/id686449807" target="_blank" rel="noopener external nofollow noreferrer">点击下载</a>）</p>
+</li>
+<li><p>Telegram Win Desktop （版本 ≥ 1.9.3  云盘：<a href="https://www.lanzous.com/b0cvwkj4j" target="_blank" rel="noopener external nofollow noreferrer">点击下载</a>  官网：<a href="https://desktop.telegram.org" target="_blank" rel="noopener external nofollow noreferrer">https://desktop.telegram.org</a>）</p>
+</li>
+<li><p>Web：<a href="http://web.telegram.org" target="_blank" rel="noopener external nofollow noreferrer">http://web.telegram.org</a></p>
+</li>
+</ul>
+<h3 id="解锁（两种方法）"><a href="#解锁（两种方法）" class="headerlink" title="解锁（两种方法）"></a>解锁<strong>（两种方法）</strong></h3><ol>
+<li>Desktop 客户端：<strong>Settings→Privacy and Security→Sensutive content→Disable filtering</strong></li>
+<li>Web：<strong>Settings→Show Sensitive Content</strong></li>
+<li>重启手机客户端</li>
+</ol>
+]]></content>
+      <categories>
+        <category>教程贴</category>
+      </categories>
+      <tags>
+        <tag>Telegram</tag>
+        <tag>解锁</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Checkra1n 越狱指南</title>
+    <url>/archives/3827c0d6.html</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>首先来说一下我的设备情况，18年9月买的 iPhone 8P，本来是准备留在 iOS 12.4 养老，但是由于去年买了耳机（AirPods Pro），所有功能起步适配 iOS 13.2，所以没办法，考虑再三，最终还是选择升级系统。</p>
+<a id="more"></a>
+
+<h3 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h3><ul>
+<li><strong>原本：</strong><u>U盘 + macOS 10.14</u></li>
+<li><strong>现在：</strong><u>Windows + 虚拟机</u></li>
+</ul>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
+<li><p><strong>环境：</strong>Windows</p>
+</li>
+<li><p><strong>虚拟机：</strong>VMware 15.5 Pro （已上传至云盘 <a href="https://pukobaggstuacnz-my.sharepoint.com/personal/jhx520_qqu_me/_layouts/15/download.aspx?SourceUrl=%2Fpersonal%2Fjhx520%5Fqqu%5Fme%2FDocuments%2FVMware%20MacOS%2Fvmware%2Dpro15%2Ezip" target="_blank" rel="noopener external nofollow noreferrer">点击下载</a>）</p>
+</li>
+<li><p><strong>镜像：</strong>ubuntu 18.03 （推荐使用网易开源镜像站 <a href="http://mirrors.163.com/ubuntu-releases/18.04/ubuntu-18.04.3-desktop-amd64.iso" target="_blank" rel="noopener external nofollow noreferrer">点击下载</a>）</p>
+</li>
+<li><p><strong>越狱工具：</strong>Checkra1n （<a href="https://checkra.in/" target="_blank" rel="noopener external nofollow noreferrer">点击跳转</a>）</p>
+</li>
+</ul>
+<h3 id="疑难"><a href="#疑难" class="headerlink" title="疑难"></a>疑难</h3><ul>
+<li><p>VMware 在装载系统时，<strong>不能全屏显示</strong>，不建议使用 VMware Tools，解决办法：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install open-vm-tools</span><br><span class="line">sudo apt-get install open-vm*</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>密钥无法导入，出现 “ <strong>gpgkeys: protocol `https’ not supported</strong> ” 错误，解决办法：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install gnupg-curl</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行 sudo apt-get update 时出现 ” <strong>无法获得锁 /var/lib/apt/lists/lock - open （11: 资源暂时不可用）</strong>“ 错误，解决办法：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo rm /var/lib/apt/lists/lock</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>其实两者并没有什么效率可言，纯属个人习惯，且不随身携带 U盘，所以还是喜欢直接进入 Windows，这样操作起来也方便些，截至写稿前，Checkra1n Win 并没有发布。</p>
+]]></content>
+      <categories>
+        <category>经验吧</category>
+      </categories>
+      <tags>
+        <tag>越狱</tag>
+        <tag>Checkra1n</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>美区 Apple ID 定制</title>
+    <url>/archives/129cd06.html</url>
+    <content><![CDATA[<h3 id="能做啥"><a href="#能做啥" class="headerlink" title="能做啥"></a>能做啥</h3><p>可以下载国区没有的应用和游戏，或是国区已下架的应用。</p>
+<blockquote>
+<p>定制的优势：账号自定义，后续可以通过邮箱联系苹果解决问题</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="单纯外区-ID（6元）"><a href="#单纯外区-ID（6元）" class="headerlink" title="单纯外区 ID（6元）"></a>单纯外区 ID（6元）</h3><p>邮箱自定义，全平台（除谷歌），不限国家，<strong>附送邮箱</strong>。</p>
+<h3 id="特别定制（30元）"><a href="#特别定制（30元）" class="headerlink" title="特别定制（30元）"></a>特别定制（30元）</h3><p>邮箱自定义，全平台（除谷歌），推荐香港、美国，<strong>附送邮箱、 Shodowrocket（小火箭）已购买</strong>。</p>
+<h3 id="你需要准备"><a href="#你需要准备" class="headerlink" title="你需要准备"></a>你需要准备</h3><span class="label success">以英文开头的自定义昵称（英文 + 数字），带有英文大小写的密码</span>
+
+
+<h3 id="我们能提供"><a href="#我们能提供" class="headerlink" title="我们能提供"></a>我们能提供</h3><p>一站式服务，邮箱、Apple ID、验证问题答案，我们将整理好文本发送给你。</p>
+<h3 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h3><p>微信：<a href="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/fQfEID.jpg" target="_blank" rel="noopener external nofollow noreferrer">Anony</a></p>
+<h3 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h3><ol>
+<li><p>如何登陆 Apple ID？</p>
+<p>请在商店（Appstore）中切换账号，不要在设置里操作。</p>
+</li>
+<li><p>购买 Shadowrocket 后，在商店「已购」选项里无法显示？</p>
+<p>第一次使用的时候，有延迟，但不影响正常下载 Shadowrocket。</p>
+</li>
+<li><p>通过搜索 Shadowrocket，依旧显示 2.99$？</p>
+<p>直接点下载就好，会自动提示你已购买，无需重复操作。</p>
+</li>
+<li><p>双重认证要不要开启？</p>
+<p>外区 ID 默认没有双重认证，建议不要开启。</p>
+</li>
+</ol>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li>代购买其他 App，也可以联系博主</li>
+</ul>
+]]></content>
+      <categories>
+        <category>随手记</category>
+      </categories>
+      <tags>
+        <tag>Apple</tag>
+        <tag>账号</tag>
+      </tags>
+  </entry>
+</search>

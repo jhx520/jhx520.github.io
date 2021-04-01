@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+<script data-ad-client="ca-pub-7680527560951507" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/lg.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/lg.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/lg.png">
+  <link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/lg.png" color="#222">
+  <meta name="google-site-verification" content="0KQsRFfSAbQsFgoX3xQcwZQQ2DCaFfMK19MafkzVUKs">
+  <meta name="baidu-site-verification" content="mBcnTxbNqY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"139931.xyz","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":false,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="从刚开始接触互联网，到现在慢慢有点了解，差不多已有四年了，在这个过程中，遇到过很多问题，也有很多疑惑，不过在漫长的摸索路途中，也学会了成长。 要说写作，可供选择的平台太多了，微信公众号、知乎、简书、博客园……之所以没有选择它们，主要还是因为平台限制太多，虽然个人自建博客，需要一点动手能力，且对 SEO 不是那么友好，不过能在网络上留下属于自己的一点印记，还是不错的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo + Github Action">
+<meta property="og:url" content="https://139931.xyz/archives/faefabad.html">
+<meta property="og:site_name" content="Charsky&#39;s Blog">
+<meta property="og:description" content="从刚开始接触互联网，到现在慢慢有点了解，差不多已有四年了，在这个过程中，遇到过很多问题，也有很多疑惑，不过在漫长的摸索路途中，也学会了成长。 要说写作，可供选择的平台太多了，微信公众号、知乎、简书、博客园……之所以没有选择它们，主要还是因为平台限制太多，虽然个人自建博客，需要一点动手能力，且对 SEO 不是那么友好，不过能在网络上留下属于自己的一点印记，还是不错的。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/69by3D.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/PlIeLr.png">
+<meta property="article:published_time" content="2020-03-16T10:30:00.000Z">
+<meta property="article:modified_time" content="2021-04-01T07:05:57.045Z">
+<meta property="article:author" content="Charsky">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Github Action">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/69by3D.png">
+
+<link rel="canonical" href="https://139931.xyz/archives/faefabad.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<script>
+  function GetUrlRelativePath() {
+    var url = document.location.toString(); //获取当前链接
+    var arrUrl = url.split("//");
+    var start = arrUrl[1].indexOf("/");
+    var relUrl = arrUrl[1].substring(start); //截取从start开始到结尾的所有字符
+    if(relUrl.indexOf("?") != -1){
+      relUrl = relUrl.split("?")[0];
+    }
+      return relUrl;
+  }
+  var relUrl = GetUrlRelativePath()
+  if (relUrl.indexOf('/books/')>=0) {
+    document.write('<meta name="referrer" content="never" />');
+  }
+  if (relUrl.indexOf('/movies/')>=0) {
+    document.write('<meta name="referrer" content="never" />');
+  }
+</script>
+
+<link rel="manifest" href="/manifest.json">
+
+  <title>Hexo + Github Action | Charsky's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?e04f2393917c68e527524063bb9871d9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="baidu-site-verification" content="mBcnTxbNqY" />
+<script data-ad-client="ca-pub-7680527560951507" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Charsky's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">干饭人，干饭魂，干饭都是人上人</h1>
+      
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        
+            
+  <li class="menu-item menu-item-overview">
+
+    <a href="/overview/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+
+
+      
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        
+            
+  <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+
+
+      
+        <li class="menu-item menu-item-movies">
+
+    <a href="/movies/" rel="section"><i class="fa fa-fw fa-film"></i>观影</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="search-pop-overlay">
+  <div class="popup search-popup">
+      <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://139931.xyz/archives/faefabad.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/01.jpg">
+      <meta itemprop="name" content="Charsky">
+      <meta itemprop="description" content="坐标苏州，喜欢折腾数码产品。没事就喜欢胡思乱想，本站主要记录一些生活经验、碎碎念和各种教程。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Charsky's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          Hexo + Github Action
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+			
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-16 18:30:00" itemprop="dateCreated datePublished" datetime="2020-03-16T18:30:00+08:00">2020-03-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%99%E7%A8%8B%E8%B4%B4/" itemprop="url" rel="index"><span itemprop="name">教程贴</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/archives/faefabad.html" class="post-meta-item leancloud_visitors" data-flag-title="Hexo + Github Action" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/archives/faefabad.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/archives/faefabad.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>从刚开始接触互联网，到现在慢慢有点了解，差不多已有四年了，在这个过程中，遇到过很多问题，也有很多疑惑，不过在漫长的摸索路途中，也学会了成长。</p>
+<p>要说写作，可供选择的平台太多了，微信公众号、知乎、简书、博客园……之所以没有选择它们，主要还是因为平台限制太多，虽然个人自建博客，需要一点动手能力，且对 SEO 不是那么友好，不过能在网络上留下属于自己的一点印记，还是不错的。</p>
+<a id="more"></a>
+
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>从一开始的 <a href="https://hexo.io/" target="_blank" rel="noopener external nofollow noreferrer">Hexo</a> 到之后 <a href="http://typecho.org/" target="_blank" rel="noopener external nofollow noreferrer">Typecho</a>，虽然说 Typecho 的主题非常多又好看，但是终究需要依靠服务器来进行，动态博客虽然炫酷，管理和迁移资源多多少少有些不便，所以最后还是选择了静态博客 <a href="https://hexo.io/" target="_blank" rel="noopener external nofollow noreferrer">Hexo</a>，只不过做了些许改变，更加好用，也方便管理。</p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>本次博客采用 <a href="https://hexo.io/" target="_blank" rel="noopener external nofollow noreferrer">Hexo</a> + <a href="https://github.com/" target="_blank" rel="noopener external nofollow noreferrer">Github</a> + <a href="https://github.com/actions" target="_blank" rel="noopener external nofollow noreferrer">Github action</a> 来进行自动化部署，不再依靠原生 Hexo 的三步命令，只要将文章（md文件）上传到 <a href="https://github.com/" target="_blank" rel="noopener external nofollow noreferrer">Github</a>，接着一切都将会自动化部署，并生成相应的网页。</p>
+<h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>今天的主题是如何利用 Github action 来进行自动化部署 Hexo 博客，教程还是比较详细的。</p>
+<blockquote>
+<p>持续集成由很多操作组成，比如抓取代码、运行测试、登录远程服务器，发布到第三方服务等等，而 GitHub 把这些操作就称为 actions。</p>
+</blockquote>
+<ol>
+<li><p>对于如何部署 Hexo 这里就不多介绍了，某度上教程还是很多的。</p>
+</li>
+<li><p>准备仓库</p>
+<p>私有仓库：用作存放本地的 Hexo 源码，之后就可以直接丢文件至私有库，即可完成博客的自动化部署。</p>
+<p>公有仓库：构建并生成 Hexo 网页，存放静态页面的，也就是你当前的博客。</p>
+</li>
+<li><p>创建密钥</p>
+<p>为了方便运行 GitHub Actions 时登录 GitHub 账号，我们使用 SSH 方式登录，就是要把设备的私钥交给 GitHub Actions，公钥交给 GitHub，需要我们去 Settings 里去配置。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "Github 的邮箱地址"  //第一次生成密钥</span><br><span class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa_x -C "Github 的邮箱地址"  //非第一次生成密钥</span><br></pre></td></tr></table></figure>
+
+<p>以 Windows 为例：密钥在<code>C:\Users\用户名</code>里，其中Users可能因为系统原因显示的是<code>用户</code>，这个文件夹里会有一个<code>.ssh</code>的目录，这个里面就是我们的密钥对。</p>
+<p><strong>公钥：id_rsa.pub</strong></p>
+<p>把<code>id_rsa.pub</code>这个文件用文本文档打开，将内容复制到 Github，配置路径：Github网站 – Settings – SSH and GPG keys</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/69by3D.png" alt=""></p>
+<p><strong>私钥：id_rsa</strong></p>
+<p>找到刚刚新建的私有仓库，配置路劲：私有仓库的 Settings - Secrets 里，新建一个<code>HEXO_DEPLOY_PRIVATE_KEY</code>的密钥，将本地文本复制进去。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/PlIeLr.png" alt=""></p>
+</li>
+<li><p>添加 Actions</p>
+<p>点击私有仓库里的<code>Actions</code></p>
+<p>点击<code>New workflow</code>来创建一个新的 actions</p>
+<p>然后在内容框填入以下代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> workflow name</span></span><br><span class="line">name: Hexo Blog CI</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> master branch on push, auto run</span></span><br><span class="line">on: </span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - master</span><br><span class="line">      </span><br><span class="line">jobs:</span><br><span class="line">  build: </span><br><span class="line">    runs-on: ubuntu-latest </span><br><span class="line">        </span><br><span class="line">    steps:</span><br><span class="line">    # check it to your workflow can access it</span><br><span class="line">    # from: https://github.com/actions/checkout</span><br><span class="line">    - name: Checkout Repository master branch</span><br><span class="line">      uses: actions/checkout@master </span><br><span class="line">      </span><br><span class="line">    # from: https://github.com/actions/setup-node  </span><br><span class="line">    - name: Setup Node.js 10.x </span><br><span class="line">      uses: actions/setup-node@master</span><br><span class="line">      with:</span><br><span class="line">        node-version: "10.x"</span><br><span class="line">    </span><br><span class="line">    - name: Setup Hexo Dependencies</span><br><span class="line">      run: |</span><br><span class="line">        npm install hexo-cli -g</span><br><span class="line">        npm install</span><br><span class="line">    </span><br><span class="line">    - name: Setup Deploy Private Key</span><br><span class="line">      env:</span><br><span class="line">        HEXO_DEPLOY_PRIVATE_KEY: $&#123;&#123; secrets.HEXO_DEPLOY_PRIVATE_KEY &#125;&#125;</span><br><span class="line">      run: |</span><br><span class="line">        mkdir -p ~/.ssh/</span><br><span class="line">        echo "$HEXO_DEPLOY_PRIVATE_KEY" &gt; ~/.ssh/id_rsa </span><br><span class="line">        chmod 600 ~/.ssh/id_rsa</span><br><span class="line">        ssh-keyscan github.com &gt;&gt; ~/.ssh/known_hosts</span><br><span class="line">        </span><br><span class="line">    - name: Setup Git Infomation</span><br><span class="line">      run: | </span><br><span class="line">        git config --global user.name '名字' </span><br><span class="line">        git config --global user.email '邮件'</span><br><span class="line">    - name: Deploy Hexo </span><br><span class="line">      run: |</span><br><span class="line">        hexo clean</span><br><span class="line">        hexo generate </span><br><span class="line">        hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>最后点击提交即可，这样设置后就不需要用 Hexo 三命令进行部署了，直接将代码推送到私有仓库，一分钟后即可看到效果。</p>
+</li>
+</ol>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>很喜欢这种自动化部署，省事方便，最关键的是，可以多平台，不用配置任何环境，即可创作，代码又交付给 Github 管理，不用担心会遗失。</p>
+
+    </div>
+	
+    
+    
+    
+      
+  <div class="popular-posts-header">推荐文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/archives/971401ca.html" rel="bookmark">临时邮箱搭建</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/archives/5293d576.html" rel="bookmark">替换思源宋体</a></div>
+    </li>
+  </ul>
+
+	
+	<div>
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:17px;">------ 本文结束啦 ★ 感谢您阅读 ------</div>
+    
+</div>
+    
+	</div>
+        <div class="reward-container">
+  <div><p style="color:#34495e; margin:0 0 5px 0;">🍭 支持一根棒棒糖！</p></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/02.jpg" alt="Charsky 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/03.jpg" alt="Charsky 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Charsky
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://139931.xyz/archives/faefabad.html" title="Hexo + Github Action">https://139931.xyz/archives/faefabad.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+              <a href="/tags/Github-Action/" rel="tag"><i class="fa fa-tag"></i> Github Action</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/archives/655a47f9.html" rel="prev" title="Onedrive 5T 账号放送">
+      <i class="fa fa-chevron-left"></i> Onedrive 5T 账号放送
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/archives/5c5e9aae.html" rel="next" title="再看《忽而今夏》">
+      再看《忽而今夏》 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">2.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作"><span class="nav-number">3.</span> <span class="nav-text">工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+		  
+		<div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Charsky"
+      src="https://cdn.jsdelivr.net/gh/jhx520/pic@master/uPic/01.jpg">
+  <p class="site-author-name" itemprop="name">Charsky</p>
+  <div class="site-description" itemprop="description">坐标苏州，喜欢折腾数码产品。没事就喜欢胡思乱想，本站主要记录一些生活经验、碎碎念和各种教程。</div>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jhx520" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jhx520" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/2975939221" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;2975939221" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Cv2Ln" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Cv2Ln" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+  </div>
+
+
+
+
+ 
+    <div class="links-of-blogroll motion-element links-of-blogroll-block">
+      <div class="links-of-blogroll-title">
+        <!-- modify icon to fire by szw -->
+        <i class="fa fa-history fa-" aria-hidden="true"></i>
+        近期文章
+      </div>
+      <ul class="links-of-blogroll-list">
+        
+        
+          <li>
+            <a href="/archives/e207e33f.html" title="装宽带注意点，附公网IP申请" target="_blank">装宽带注意点，附公网IP申请</a>
+          </li>
+        
+          <li>
+            <a href="/archives/5f1282fc.html" title="画上句号" target="_blank">画上句号</a>
+          </li>
+        
+          <li>
+            <a href="/archives/b3ad6b9f.html" title="FTP与文件共享" target="_blank">FTP与文件共享</a>
+          </li>
+        
+          <li>
+            <a href="/archives/a49c84ce.html" title="黑苹果折腾日记（一）" target="_blank">黑苹果折腾日记（一）</a>
+          </li>
+        
+      </ul>
+    </div>
+	
+      </div>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Charsky</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">9k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">8 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> 强力驱动
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+  <script>
+  function leancloudSelector(url) {
+    url = encodeURI(url);
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              })
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=CVN51qno8Ayz9HIFbeL8Qutr-gzGzoHsz')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : 'CVN51qno8Ayz9HIFbeL8Qutr-gzGzoHsz',
+            'X-LC-Key'    : 'l3o9I3cszmkDalEXiLRzLhJ1',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 600,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://139931.xyz/archives/faefabad.html',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '5Ha3zbJHJCvDsdLGb8WU3Iwm-gzGzoHsz',
+      appKey     : '6heGSfocolMQTWQABL5f6Ykh',
+      placeholder: "记得留下邮箱，可以快速收到回复提醒。",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div class="moon-menu-item" onclick="back2bottom()">
+      <i class='fa fa-chevron-down'></i>    </div>
+    
+    <div class="moon-menu-item" onclick="back2top()">
+      <i class='fa fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button" onclick="moonMenuClick()">
+    <svg class="moon-menu-svg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+      <g class="moon-menu-points">
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy="-.8rem"></circle>
+        <circle class="moon-menu-point" r=".2rem"></circle>
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy=".8rem"></circle>
+      </g>
+    </svg>
+    <div class="moon-menu-icon">
+    </div>
+    <div class="moon-menu-text">
+    </div>
+  </div>
+</div>
+<script src="/js/injector.js"></script>
+  
+  
+    <script src="https://cdn.jsdelivr.net/gh/leafjame/cdn/share/js/fireworks.js"></script>
+  
+
+
+
+  <script src="/js/src/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+  <div class="app-refresh" id="app-refresh">
+    <div class="app-refresh-wrap" onclick="location.reload()">
+        <label>已更新最新版本</label>
+        <span>点击刷新</span>
+    </div>
+</div>
+
+<script>
+    if ('serviceWorker' in navigator) {
+        if (navigator.serviceWorker.controller) {
+            navigator.serviceWorker.addEventListener('controllerchange', function() {
+                showNotification();
+            });
+        }
+
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js');
+        });
+    }
+
+    function showNotification() {
+        document.querySelector('meta[name=theme-color]').content = '#000';
+        document.getElementById('app-refresh').className += ' app-refresh-show';
+    }
+</script>
+</body>
+</html>
